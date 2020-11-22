@@ -141,8 +141,8 @@ int main() {
     << "Euler stepper to solve lorenz system" << newl
     << tab << "================================================" << newl;
     state_type x0 = { 1.0, 0.0, 0.0 }; /* starting conditions */
-	double dt = 0.01;
-	integrateConst( consumeStepper<stepper_type>( stepper_type() ),
-			lorenzSystem, x0, 0.0, 1, dt, observeState );
+    double dt = 0.01;
+    integrateConst( consumeStepper<stepper_type>( stepper_type() ),
+		    lorenzSystem, x0, 0.0, 1, dt, observeState );
     return 0;
 }
