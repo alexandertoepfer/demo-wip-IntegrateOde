@@ -36,7 +36,7 @@ class euler_stepper {
 		/* performs one step with knowledge of dxdt */
 		template< class DynamicSystem >
 		void doStep( DynamicSystem& system, container_type& x,
-					 const container_type& dxdt, time_type t, time_type dt ) {
+			     const container_type& dxdt, time_type t, time_type dt ) {
 			increment( traits_type::begin( x ), traits_type::end( x ), traits_type::begin( dxdt ), dt );
 		}
 		template< class DynamicSystem >
