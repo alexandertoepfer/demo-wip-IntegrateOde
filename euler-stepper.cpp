@@ -137,7 +137,7 @@ void observeState( state_type& x, double t ) {
 /* example for numerical solutions to the lorenz attractor
  * TODO : implement rk4 stepper additionally */
 int main() {
-	std::cout << tab << std::right << std::setw( 42 ) << std::setfill( ' ' )
+    std::cout << tab << std::right << std::setw( 42 ) << std::setfill( ' ' )
     << "Euler stepper to solve lorenz system" << newl
     << tab << "================================================" << newl;
     state_type x0 = { 1.0, 0.0, 0.0 }; /* starting conditions */
