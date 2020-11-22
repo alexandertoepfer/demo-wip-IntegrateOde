@@ -128,7 +128,7 @@ void lorenzSystem( state_type& x, state_type& dxdt, double t ) {
 
 /* observer function for printing */
 void observeState( state_type& x, double t ) {
-	std::cout << tab << std::setw( 15 ) << std::setprecision( 10 ) << x[0]
+    std::cout << tab << std::setw( 15 ) << std::setprecision( 10 ) << x[0]
     << tab << std::setw( 15 ) << std::setprecision( 10 ) << x[1]
     << tab << std::setw( 15 ) << std::setprecision( 10 ) << x[2]
     << newl;
@@ -143,6 +143,6 @@ int main() {
     state_type x0 = { 1.0, 0.0, 0.0 }; /* starting conditions */
 	double dt = 0.01;
 	integrateConst( consumeStepper<stepper_type>( stepper_type() ),
-					lorenzSystem, x0, 0.0, 1, dt, observeState );
+			lorenzSystem, x0, 0.0, 1, dt, observeState );
     return 0;
 }
