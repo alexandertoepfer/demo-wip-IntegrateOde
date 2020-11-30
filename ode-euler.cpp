@@ -144,5 +144,4 @@ int main() {
     double dt = 0.01;
     integrateConst( consumeStepper<stepper_type>( stepper_type() ),
 		    lorenzSystem, x0, 0.0, 1, dt, observeState );
-    return 0;
 }
