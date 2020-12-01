@@ -96,12 +96,12 @@ std::remove_reference<T>::type&& (*consumeStepper)(T&& t) = std::move;
 
 /* iterate the state of the ordinary differential equation */
 template< class Stepper, class DynamicSystem, class Observer >
-void integrateConst( Stepper&& stepper, DynamicSystem& system, 
-                     typename Stepper::container_type& x0,
-                     typename Stepper::time_type t0, 
-                     typename Stepper::time_type t1,
-                     typename Stepper::time_type dt, 
-                     Observer& observer ) {
+void integrate( Stepper&& stepper, DynamicSystem& system, 
+                typename Stepper::container_type& x0,
+                typename Stepper::time_type t0, 
+                typename Stepper::time_type t1,
+                typename Stepper::time_type dt, 
+                Observer& observer ) {
     stepper.adjustSize( x0 );
     for( size_t i = 0; t0 < t1; ++i, t0 += dt ) {
         stepper.doStep( system, x0, t0, dt );
@@ -142,6 +142,6 @@ int main() {
     << tab << "================================================" << newl;
     state_type x0 = { 1.0, 0.0, 0.0 }; /* starting conditions */
     double dt = 0.01;
-    integrateConst( consumeStepper<stepper_type>( stepper_type() ),
-		    lorenzSystem, x0, 0.0, 1, dt, observeState );
+    integrate( consumeStepper<stepper_type>( stepper_type() ),
+	       lorenzSystem, x0, 0.0, 1, dt, observeState );
 }
