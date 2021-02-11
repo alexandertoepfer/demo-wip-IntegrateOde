@@ -143,6 +143,6 @@ int main() {
     << tab << "================================================" << newl;
     state_type x0 = { 1.0, 0.0, 0.0 }; /* starting conditions */
     double dt = 0.01;
-    integrate( consumeStepper<stepper_type>( stepper_type() ),
+    integrate( consumeStepper< stepper_type >( stepper_type() ),
 	       lorenzSystem, x0, 0.0, 1, dt, observeState );
 }
